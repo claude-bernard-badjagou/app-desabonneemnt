@@ -1,0 +1,199 @@
+
+#### **Données de base client**
+1. **`Referred.a.Friend`**  
+   - Indique si le client a été référé par un ami.  
+   - Valeurs possibles : "Yes", "No".  
+   - **Utilité :** Les clients référés par des amis peuvent être plus fidèles.
+
+2. **`Number.of.Referrals`**  
+   - Nombre de personnes référées par le client.  
+   - **Utilité :** Un client qui recommande activement peut être plus satisfait.
+
+3. **`Tenure.in.Months`**  
+   - Nombre de mois durant lesquels le client est resté abonné.  
+   - **Utilité :** Un indicateur clé de fidélité.
+
+4. **`Offer`**  
+   - Offre promotionnelle utilisée lors de l'abonnement.  
+   - Valeurs possibles : "None", "Discount", "Special Deal".  
+   - **Utilité :** Permet de comprendre l'impact des promotions sur la fidélité.
+
+---
+
+#### **Services téléphoniques et internet**
+5. **`Phone.Service`**  
+   - Indique si le client a souscrit à un service téléphonique.  
+   - Valeurs possibles : "Yes", "No".  
+   - **Utilité :** Catégoriser les clients par type de service.
+
+6. **`Multiple.Lines`**  
+   - Indique si le client dispose de plusieurs lignes téléphoniques.  
+   - Valeurs possibles : "Yes", "No", "No phone service".  
+   - **Utilité :** Les clients ayant plusieurs lignes peuvent être plus rentables.
+
+7. **`Internet.Service`**  
+   - Indique si le client utilise un service Internet.  
+   - Valeurs possibles : "Yes", "No".  
+   - **Utilité :** Identifier les clients sans service Internet.
+
+8. **`Internet.Type`**  
+   - Type de connexion Internet du client.  
+   - Valeurs possibles : "DSL", "Fiber Optic", "None".  
+   - **Utilité :** Le type de connexion peut influencer la satisfaction.
+
+9. **`Avg.Monthly.GB.Download`**  
+   - Moyenne de données téléchargées par mois (en GB).  
+   - **Utilité :** Identifier les gros utilisateurs de données.
+
+---
+
+#### **Services numériques et supplémentaires**
+10. **`Online.Security`**  
+    - Indique si le client a souscrit à un service de sécurité en ligne.  
+    - Valeurs possibles : "Yes", "No".  
+    - **Utilité :** Détecter les préférences en matière de cybersécurité.
+
+11. **`Online.Backup`**  
+    - Indique si le client utilise un service de sauvegarde en ligne.  
+    - Valeurs possibles : "Yes", "No".  
+    - **Utilité :** Les clients avec des sauvegardes peuvent être plus fidèles.
+
+12. **`Device.Protection.Plan`**  
+    - Indique si le client a souscrit à un plan de protection des appareils.  
+    - Valeurs possibles : "Yes", "No".  
+    - **Utilité :** Un service populaire pour les appareils connectés.
+
+13. **`Premium.Tech.Support`**  
+    - Indique si le client a accès à un support technique premium.  
+    - Valeurs possibles : "Yes", "No".  
+    - **Utilité :** Un support de qualité peut réduire le churn.
+
+14. **`Streaming.TV`**  
+    - Indique si le client utilise un service de streaming TV.  
+    - Valeurs possibles : "Yes", "No".  
+    - **Utilité :** Mesure l'engagement des utilisateurs de streaming.
+
+15. **`Streaming.Movies`**  
+    - Indique si le client utilise un service de streaming de films.  
+    - Valeurs possibles : "Yes", "No".  
+    - **Utilité :** Connaître les préférences de contenu vidéo.
+
+16. **`Streaming.Music`**  
+    - Indique si le client utilise un service de streaming musical.  
+    - Valeurs possibles : "Yes", "No".  
+    - **Utilité :** Identifier les amateurs de musique.
+
+17. **`Unlimited.Data`**  
+    - Indique si le client dispose d’un forfait avec données illimitées.  
+    - Valeurs possibles : "Yes", "No".  
+    - **Utilité :** Les clients avec des forfaits illimités pourraient avoir un meilleur engagement.
+
+---
+
+#### **Facturation et paiements**
+18. **`Contract`**  
+    - Type de contrat souscrit par le client.  
+    - Valeurs possibles : "Month-to-Month", "One Year", "Two Year".  
+    - **Utilité :** Les contrats à long terme réduisent le churn.
+
+19. **`Paperless.Billing`**  
+    - Indique si le client utilise une facturation dématérialisée.  
+    - Valeurs possibles : "Yes", "No".  
+    - **Utilité :** Un service moderne qui peut influencer la satisfaction.
+
+20. **`Payment.Method`**  
+    - Méthode de paiement utilisée.  
+    - Valeurs possibles : "Credit Card", "Bank Transfer", "Electronic Check", "Mailed Check".  
+    - **Utilité :** Les chèques électroniques sont souvent liés à un taux de churn élevé.
+
+21. **`Monthly.Charge`**  
+    - Montant mensuel facturé au client.  
+    - **Utilité :** Un coût élevé peut être un facteur de désabonnement.
+
+22. **`Total.Regular.Charges`**  
+    - Total cumulé des charges régulières depuis l’abonnement.  
+    - **Utilité :** Donne une idée de la rentabilité du client.
+
+23. **`Total.Refunds`**  
+    - Montant total remboursé au client.  
+    - **Utilité :** Un nombre élevé de remboursements peut indiquer une insatisfaction.
+
+24. **`Total.Extra.Data.Charges`**  
+    - Montant total facturé pour les dépassements de données.  
+    - **Utilité :** Mesure l’utilisation des services supplémentaires.
+
+25. **`Total.Long.Distance.Charges`**  
+    - Montant total facturé pour les appels longue distance.  
+    - **Utilité :** Mesure l’utilisation des services téléphoniques.
+
+---
+
+#### **Données démographiques**
+26. **`Gender`**  
+    - Genre du client.  
+    - Valeurs possibles : "Male", "Female".  
+    - **Utilité :** Identifier des tendances basées sur le genre.
+
+27. **`Age`**  
+    - Âge du client.  
+    - **Utilité :** Les clients plus jeunes peuvent avoir un comportement différent.
+
+28. **`Married`**  
+    - Indique si le client est marié.  
+    - Valeurs possibles : "Yes", "No".  
+    - **Utilité :** Les clients mariés pourraient avoir des préférences différentes.
+
+29. **`Dependents`**  
+    - Indique si le client a des personnes à charge.  
+    - Valeurs possibles : "Yes", "No".  
+    - **Utilité :** Un indicateur de stabilité ou de priorités financières.
+
+30. **`Number.of.Dependents`**  
+    - Nombre de personnes à charge.  
+    - **Utilité :** Permet de segmenter les clients par responsabilités.
+
+---
+
+#### **Géographie et démographie étendue**
+31. **`Latitude`**  
+    - Latitude géographique du client.  
+    - **Utilité :** Permet une analyse géographique des clients.
+
+32. **`Longitude`**  
+    - Longitude géographique du client.  
+    - **Utilité :** Complète l’analyse géographique.
+
+33. **`Population`**  
+    - Taille de la population locale du client.  
+    - **Utilité :** Les zones densément peuplées peuvent avoir des tendances différentes.
+
+---
+
+#### **Engagement et satisfaction**
+34. **`Churn.Value`**  
+    - Indique si le client a churné.  
+    - Valeurs possibles : "1" (churn), "0" (non churn).  
+    - **Utilité :** Cible principale pour la prédiction.
+
+35. **`CLTV`** (Customer Lifetime Value)  
+    - Valeur totale estimée que le client génèrera.  
+    - **Utilité :** Identifier les clients les plus rentables.
+
+36. **`Total.Customer.Svc.Requests`**  
+    - Nombre total de requêtes au service client.  
+    - **Utilité :** Un indicateur de problèmes récurrents.
+
+37. **`Product.Service.Issues.Reported`**  
+    - Nombre de problèmes signalés concernant les produits ou services.  
+    - **Utilité :** Mesure la satisfaction client.
+
+38. **`Customer.Satisfaction`**  
+    - Score global de satisfaction client.  
+    - Valeurs possibles : Échelle de 1 à 10.  
+    - **Utilité :** Une mesure directe de l’expérience client.
+
+--- 
+
+#### **Remarque :**
+Ces colonnes couvrent un large éventail de dimensions : comportement, satisfaction, démographie, utilisation des services, et localisation. Elles permettent une analyse complète et une prédiction précise du churn.
+    """
