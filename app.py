@@ -53,7 +53,7 @@ def ordonne_index(df):
     df_ordonne = df.sort_index()
     return df_ordonne
 
-# Identifier les colonnes numériques et celles catégorielles dans les deux ensembles de données.s
+# Identifier les colonnes numériques et celles catégorielles dans les deux ensembles de données.
 col_numeriques = df_test.select_dtypes(include=["float64", "int64"]).columns
 col_categorielles = df_test.select_dtypes(include=["object"]).columns
 
@@ -203,14 +203,14 @@ def page_accueil():
     st.write("En s'attaquant au problème du désabonnement, les entreprises de télécom peuvent non seulement préserver leur position sur le marché, mais aussi se développer et prospérer. Plus il y a de clients dans leur réseau, plus le coût d'initiation est faible et plus les bénéfices sont importants. Par conséquent, l'objectif principal de l'entreprise pour réussir est de réduire l'attrition des clients et de mettre en œuvre une stratégie de fidélisation efficace.")
     st.success("Approche de solution :")
     st.write("Pour détecter les signes précurseurs d'un désabonnement potentiel, il faut d'abord développer une vision globale des clients et de leurs interactions sur de nombreux canaux, notamment l'utilisation du service, l'historique des problèmes rencontrés, les appels au service clientèle, pour n'en citer que ces quelques-uns.")
-    st.write("Rendez-vous sur la page [Informations]() pour en savoir plus sur les données collectées sur les clients")
+    st.write("Rendez-vous sur la page Informations pour en savoir plus sur les données collectées sur les clients")
 
 # Page: Informations
 def page_informations():
     st.title("Informations")
     st.write("### Informations sur les données")
     st.write("Cette page fournit des détails sur les sources, formats et descriptions des données utilisées.")
-    st.info("LES DONNEES (REELLES OU FICTIVES) UTILISEES DANS CE PROJET SONT FOURNIES PAR DJAMO")
+    st.info("LES DONNEES (REELLES OU FICTIVES) UTILISEES DANS CE PROJET SONT FOURNIES POUR EFFECTUER UN TEST")
     st.info("Aperçu d'un échantillon des données d'entrainement du modèle (df_train)")
     st.write(echantillon(df_train))
     st.info("Aperçu d'un échantillon des données pour tester le modèle (df_test)")
@@ -242,9 +242,9 @@ def page_exploration_des_donnees():
     st.write(statistique_descriptive_col_categorielles.T)
     st.write("### **3. Analyse des anomalies et données manquantes dans train et test**")
     st.write("Vérificattion des valeurs manquantes dans chaque colonne de mes données")
-    st.write("Données manquantes train :\n", )
+    st.write("Données manquantes dans le train :\n", )
     donnees_manquantes(df_train)
-    st.write("Données manquantes test :\n", )
+    st.write("Données manquantes dans le test :\n", )
     donnees_manquantes(df_test)
     st.warning("Valeurs aberrantes identifiées dans les données train à l'aide de z-score")
     valeurs_aberrantes(df_train, col_numeriques)
@@ -265,6 +265,7 @@ def page_exploration_des_donnees():
     if st.checkbox("Afficher le nombre d'occurence de valeurs distinctes par colonne de données test"):
         valeurs_uniques(df_test, col_categorielles)
         st.write("Remarque : La valeur '-99' la plus fréquente de la colonne 'Customer.Satisfaction' n'est pas une chaîne de caractères semblable aux autres de la même colonne. Nous allons gérer son cas par la suite.")
+        st.write("Rendez-vous sur la page transformation pour comprendre les modifications apportées aux données collectées")
 
 # Page: Transformation des données
 def page_transformation_des_donnees():
@@ -285,7 +286,8 @@ def page_transformation_des_donnees():
     st.info("Pour éviter de créer une relation d'ordre trompeur dans nos données :")
     st.write("**Encodons les colonnes avec deux valeurs uniques avec le labelEncoder**")
     repartition_valeurs_uniques(df_train, col_categorielles)
-    df_train_copy = df_train.copy()     #df_copy à modifier plus tard (optionnel)
+    # Création d'une copie des données
+    df_train_copy = df_train.copy()  
     df_test_copy = df_test.copy()
     encodage_deux_valeurs(df_train_copy, col_cat_deux_valeurs) # train      
     encodage_deux_valeurs(df_test_copy, col_cat_deux_valeurs) # test
@@ -295,7 +297,7 @@ def page_transformation_des_donnees():
     df_test_copy = pd.get_dummies(df_test_copy, columns=col_cat_plus_deux_valeurs, dtype=int)
     st.success("Les colonnes avec plus de deux valeurs uniques ont été encodé avec One Hot Encoder")
     st.write("### **3. Normalisation des colonnes numériques**")
-    st.write("Normalisation des valeurs des colonnes identifiées commes des outliers avec RobustScaler")
+    st.write("Normalisation des valeurs des colonnes identifiées comme des outliers avec RobustScaler")
     st.write("Rappel, dans le train :")
     valeurs_aberrantes(df_train_copy, col_numeriques)
     st.write("Rappel, dans le test :")
@@ -361,7 +363,7 @@ def page_developpement_de_modeles():
     # Repartition des données de train et celles de test
     X_train, y_train = selection_colonnes_train(df_train_copy, colonnes_selectionnees)
     X_test, y_test = selection_colonnes_test(df_test_copy, colonnes_selectionnees)
-    st.info("### **Dernière vérifications**")
+    st.info("### **Dernières vérifications**")
     st.write("**Voici un aperçu des données finales traitées pour l'entraînement du modèle :**")  
     st.write("Voici les catactéristiques :\n", X_train.head())
     st.write("Voici les exemples de la valeur cible :\n", y_train.head())
@@ -464,7 +466,7 @@ def page_faire_des_predictions():
 def page_documentation_du_projet():
     st.title("Documentation du projet")
     st.write("### Guide de l'utilisateur")
-    st.write("Cette application Streamlit vous permet de présenter et de travailler sur votre projet de machine learning.")
+    st.info("Pour un projet en production, le guide devrait être ajouté")
     
 
 # Main app
